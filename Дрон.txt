@@ -1,0 +1,84 @@
+Дрон
+
+Полёт
+sverk@73a76205baf9:~$ python3 drone.py
+Старт: A6 (origin aruco_map: центр D1)
+Маршрут: E2 [VLM] → A1 [VLM] → D1
+Ожидаю PX4 (до 30 с)...
+PX4 готов. yaw=0.637 рад
+Взлёт на 1.5 м (frame_id=body)...
+Взлетели.
+Пауза 2.0 с перед проверкой ArUco...
+Ожидаю ArUco-локализацию (до 30 с)...
+ArUco готов: x=3.891, y=2.441, z=1.185 (frame_id=aruco_map)
+Полёт к E2 (0.800, -0.800)...
+Стабилизация 3 с...
+Прилетели в E2.
+Смена высоты на z=1.20 м...
+Стабилизация 3 с на высоте скана...
+VLM сканирование в E2 (subject='a toy', z=1.20 м)...
+[vlm_query] Делаю снимок с камеры дрона...
+[vlm_query] Снимок готов.
+[vlm_query] Создаю action-клиент /vlm/query...
+[vlm_query] Жду сервер /vlm/query (timeout=10.0s)...
+[vlm_query] Сервер найден.
+[vlm_query] Отправляю goal (use_npu_vision=True, query='Do you see a toy in this image? Answer with a single word only: yes or no.')...
+[vlm_query] Goal принят сервером, жду результат (это может занять время)...
+[vlm_query] Получен ответ (inference_time_ms=40538.9609375): 'No.'
+[vlm_query] Ответ не JSON -- отдаю сырой текст.
+[vlm_query] Распарсено как: False
+[vlm_query] found=False -> LED красный
+Результат E2: found=False
+Смена высоты на z=1.50 м...
+Полёт к A1 (0.000, 2.400)…
+
+Детекция чебурашки
+
+sverk@73a76205baf9:~$ python3 vv.py
+[vlm_query] Инициализирую sverk_interfaces...
+[vlm_query] Инициализация завершена.
+[vlm_query] Делаю снимок с камеры дрона...
+[vlm_query] Снимок готов.
+[vlm_query] Создаю action-клиент /vlm/query...
+[vlm_query] Жду сервер /vlm/query (timeout=10.0s)...
+[vlm_query] Сервер найден.
+[vlm_query] Отправляю goal (use_npu_vision=True, query='Do you see a toy in this image? Answer with a single word only: yes or no.')...
+[vlm_query] Goal принят сервером, жду результат (это может занять время)...
+[vlm_query] Получен ответ (inference_time_ms=41946.3984375): 'Yes.'
+[vlm_query] Ответ не JSON -- отдаю сырой текст.
+[vlm_query] Распарсено как: True
+[vlm_query] found=True -> LED зелёный
+[vlm_query] Финальный результат: found=True
+True
+[vlm_query] Закрываю соединение с дроном...
+[vlm_query] Готово.
+
+Обмен сообщениями
+
+sverk@73a76205baf9:~$ python3 dron.py --peer-ip 192.168.1.181
+13:29:54 [INFO] [drone] === SVERK Dozor — узел связи: DRONE ===
+13:29:54 [INFO] [drone] Стартовая точка drone: клетка A6 (x=0.40 м, y=4.40 м)
+13:29:54 [INFO] [drone] UDP-порт: 45454 | адрес отправки: 192.168.1.181 | ожидаемый партнёр: rover
+13:29:54 [INFO] [drone] Статус связи с rover: OFFLINE ❌ | последний heartbeat: нет данных | seq=None
+Наберите текст и нажмите Enter, чтобы отправить сообщение rover-у. 'exit' или Ctrl+C — выход.
+> 13:29:58 [INFO] [drone] ✅ rover на связи! IP=127.0.0.1, стартовая точка=D1
+hgieruhghiuer
+> 13:30:04 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 3.6 с назад | seq=2
+
+💬 [rover] khijhrthrt
+> 13:30:14 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 0.1 с назад | seq=6
+13:30:24 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 1.5 с назад | seq=8
+13:30:34 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 3.0 с назад | seq=10
+13:30:44 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 0.2 с назад | seq=13
+13:30:54 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 1.8 с назад | seq=15
+13:31:04 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 3.4 с назад | seq=17
+13:31:14 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 0.6 с назад | seq=20
+13:31:24 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 1.5 с назад | seq=22
+13:31:34 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 2.6 с назад | seq=24
+13:31:44 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 3.8 с назад | seq=26
+13:31:54 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 4.5 с назад | seq=28
+13:32:04 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 0.8 с назад | seq=31
+13:32:14 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 1.7 с назад | seq=33
+13:32:24 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 2.5 с назад | seq=35
+13:32:34 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 3.1 с назад | seq=37
+13:32:44 [INFO] [drone] Статус связи с rover: ONLINE ✅ | последний heartbeat: 3.7 с назад | seq=39

@@ -1,0 +1,30 @@
+ровер
+обмен сообщениями
+[rover] pi@raspberrypi:~/sverk_rover$ python3 rover.py --peer-ip 192.168.1.36 --mcp-url http://192.168.1.36:9092
+16:29:56 [INFO] [rover] === SVERK Dozor — узел связи: ROVER ===
+16:29:56 [INFO] [rover] Стартовая точка rover: клетка D1 (x=2.80 м, y=0.40 м)
+16:29:56 [INFO] [rover] UDP-порт: 45454 | адрес отправки: 192.168.1.36 | ожидаемый партнёр: drone
+16:29:56 [INFO] [rover] MCP-релей включён: http://192.168.1.36:9092 (heartbeat дублируется через shell_exec партнёра на его 127.0.0.1:45454, в обход внешнего файрвола)
+16:29:56 [INFO] [rover] Статус связи с drone: OFFLINE ❌ | последний heartbeat: нет данных | seq=None
+Наберите текст и нажмите Enter, чтобы отправить сообщение drone-у. 'exit' или Ctrl+C — выход.
+> 16:29:58 [INFO] [rover] ✅ drone на связи! IP=192.168.1.36, стартовая точка=A6
+
+💬 [drone] hgieruhghiuer
+> khijhrthrt
+16:30:06 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=9
+> 16:30:16 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=14
+16:30:26 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=19
+16:30:36 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=24
+16:30:46 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=29
+16:30:56 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=34
+16:31:06 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=39
+16:31:16 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=44
+16:31:26 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=49
+16:31:36 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=54
+16:31:46 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=59
+16:31:56 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=64
+16:32:06 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=69
+16:32:16 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=74
+16:32:26 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.3 с назад | seq=79
+16:32:36 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.2 с назад | seq=84
+16:32:46 [INFO] [rover] Статус связи с drone: ONLINE ✅ | последний heartbeat: 0.2 с назад | seq=89
