@@ -46,7 +46,7 @@ VLM_SUBJECT = "a toy"      # объект для VLM (как в vlm_query.py)
 WAYPOINTS: list[tuple[str, bool]] = [
     ("E2", True),   # VLM: ожидаем found=True
     ("A1", True),   # VLM: ожидаем found=False
-    ("F6", False),  # посадка без скана
+    ("D1", False),  # посадка без скана
 ]
 
 ORIGIN_ROW = "D"           # центр метки D1 = (0, 0) в aruco_map
